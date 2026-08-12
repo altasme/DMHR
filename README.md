@@ -58,6 +58,36 @@ Copy `.env.example` to `.env.local` and fill in the values you have:
    Variables (at minimum `RESEND_API_KEY` before going live).
 3. Deploy. No other configuration is required.
 
+## Deployment (Cloudflare Workers)
+
+The repo also ships with the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare)
+(`open-next.config.ts`, `wrangler.jsonc`), so it can deploy to Cloudflare Workers
+instead of, or in addition to, Vercel.
+
+**Recommended: Git integration (no CLI needed)**
+
+1. In the Cloudflare dashboard, create a new Workers project and connect this
+   GitHub repository.
+2. Build command: `npx opennextjs-cloudflare build`. Deploy command:
+   `npx wrangler deploy`. (Cloudflare's Next.js framework preset may fill
+   these in automatically.)
+3. Add the environment variables from above as Worker secrets/variables in
+   the dashboard (Settings → Variables and Secrets) — at minimum
+   `RESEND_API_KEY`.
+4. Push to the branch Cloudflare is watching to trigger a build.
+
+**Manual CLI deploy** (from a machine/environment that can reach the
+Cloudflare API and is logged in via `npx wrangler login` or a
+`CLOUDFLARE_API_TOKEN`):
+
+```bash
+npm run deploy   # builds with opennextjs-cloudflare, then `wrangler deploy`
+```
+
+Set secrets first with `npx wrangler secret put RESEND_API_KEY` (repeat for
+any other secret values). For local Cloudflare-flavored testing, copy
+`.dev.vars.example` to `.dev.vars` and run `npm run preview`.
+
 ## Outstanding Client Assets
 
 The site currently uses placeholders for anything the client hasn't provided yet
