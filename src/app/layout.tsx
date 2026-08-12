@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
@@ -8,15 +8,23 @@ import RouteAnalytics from "@/components/RouteAnalytics";
 import { SITE_NAME, SITE_URL, TAGLINE } from "@/lib/constants";
 import "./globals.css";
 
-const bodyFont = Inter({
+// Self-hosted (rather than next/font/google) so the build never depends on
+// reaching fonts.gstatic.com at build time — that fetch is unreliable in some
+// CI/deploy environments (e.g. it 404s during Cloudflare Pages builds) and
+// fails the whole build when it does. Variable fonts, Latin subset only,
+// matching the previous next/font/google config.
+const bodyFont = localFont({
+  src: "./fonts/inter-variable-latin.woff2",
   variable: "--font-body",
-  subsets: ["latin"],
+  weight: "100 900",
+  display: "swap",
 });
 
-const displayFont = Plus_Jakarta_Sans({
+const displayFont = localFont({
+  src: "./fonts/plus-jakarta-sans-variable-latin.woff2",
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: "200 800",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
