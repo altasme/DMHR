@@ -48,24 +48,3 @@ export const TRUST_INDICATORS = [
   { value: "DTI & BIR", label: "Registered Business" },
   { value: "DOLE OSH", label: "Certified" },
 ];
-
-export const CONSULTATION_SERVICE_OPTIONS = [
-  "HR Consultancy",
-  "HR Systems",
-  "Recruitment & Talent",
-  "Employee Management",
-  "HR Policies & Documentation",
-  "Performance Management",
-  "Accounting / Bookkeeping",
-  "Payroll",
-  "Business Development",
-  "Organizational Development",
-  "Other",
-];
-
-export const PREFERRED_CONTACT_METHODS = [
-  "Messenger",
-  "WhatsApp",
-  "Phone",
-  "Email",
-];

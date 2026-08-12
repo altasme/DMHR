@@ -9,13 +9,10 @@ declare global {
 }
 
 export type AnalyticsEvent =
-  | "consultation_request"
   | "cta_click"
   | "phone_click"
   | "whatsapp_click"
-  | "messenger_click"
-  | "service_page_view"
-  | "contact_page_view";
+  | "messenger_click";
 
 export function trackEvent(
   event: AnalyticsEvent,

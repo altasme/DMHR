@@ -1,6 +1,6 @@
 import Container from "../Container";
 import SectionHeading from "../SectionHeading";
-import CtaLink from "../CtaLink";
+import BookConsultationCta from "../BookConsultationCta";
 
 const STEPS = [
   {
@@ -53,9 +53,7 @@ export default function HowItWorks() {
         </div>
 
         <div className="mt-12 text-center">
-          <CtaLink href="/contact" event="cta_click" eventParams={{ location: "how_it_works" }}>
-            Book a Consultation
-          </CtaLink>
+          <BookConsultationCta location="how_it_works" />
         </div>
       </Container>
     </section>

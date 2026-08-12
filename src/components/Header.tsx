@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Container from "./Container";
 import Logo from "./Logo";
-import CtaLink from "./CtaLink";
+import BookConsultationCta from "./BookConsultationCta";
 import { NAV_LINKS } from "@/lib/constants";
 
 export default function Header() {
@@ -48,9 +48,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <CtaLink href="/contact" event="cta_click" eventParams={{ location: "header" }} size="sm">
-            Book a Consultation
-          </CtaLink>
+          <BookConsultationCta location="header" size="sm" showIcon={false} />
         </div>
 
         <button
@@ -77,14 +75,7 @@ export default function Header() {
               </a>
             ))}
             <div className="mt-2 px-3">
-              <CtaLink
-                href="/contact"
-                event="cta_click"
-                eventParams={{ location: "header_mobile" }}
-                className="w-full"
-              >
-                Book a Consultation
-              </CtaLink>
+              <BookConsultationCta location="header_mobile" className="w-full" />
             </div>
           </Container>
         </div>

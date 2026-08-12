@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "./icons/SocialIcons";
 import Container from "./Container";
 import Logo from "./Logo";
-import CtaLink from "./CtaLink";
+import BookConsultationCta from "./BookConsultationCta";
 import {
   CONTACT,
   FOOTER_LEGAL_LINKS,
@@ -26,9 +26,7 @@ export default function Footer() {
             <Logo light />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">{TAGLINE}</p>
             <div className="mt-6">
-              <CtaLink href="/contact" event="cta_click" eventParams={{ location: "footer" }}>
-                Book a Consultation
-              </CtaLink>
+              <BookConsultationCta location="footer" />
             </div>
             {socials.length > 0 && (
               <div className="mt-8 flex gap-3">

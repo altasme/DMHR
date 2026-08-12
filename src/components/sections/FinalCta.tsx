@@ -21,13 +21,14 @@ export default function FinalCta({ location = "final_cta" }: { location?: string
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <CtaLink
             href="/contact"
+            variant="outline-light"
             size="lg"
             icon={<ArrowRight size={18} />}
             event="cta_click"
             eventParams={{ location }}
             className="w-full sm:w-auto"
           >
-            Book a Consultation
+            See Contact Options
           </CtaLink>
           <CtaLink
             href={CONTACT.whatsappHref}

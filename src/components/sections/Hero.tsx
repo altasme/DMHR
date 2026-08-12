@@ -1,6 +1,7 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Container from "../Container";
 import CtaLink from "../CtaLink";
+import BookConsultationCta from "../BookConsultationCta";
 import { TRUST_INDICATORS } from "@/lib/constants";
 
 export default function Hero() {
@@ -31,23 +32,14 @@ export default function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <CtaLink
-              href="/contact"
-              size="lg"
-              event="cta_click"
-              eventParams={{ location: "hero" }}
-              icon={<ArrowRight size={18} />}
-              className="w-full sm:w-auto"
-            >
-              Book a Consultation
-            </CtaLink>
+            <BookConsultationCta location="hero" size="lg" className="w-full sm:w-auto" />
             <CtaLink
               href="/services"
               variant="outline-light"
               size="lg"
               event="cta_click"
               eventParams={{ location: "hero_secondary" }}
-              icon={<MessageCircle size={18} />}
+              icon={<ArrowRight size={18} />}
               className="w-full sm:w-auto"
             >
               Explore Our Services

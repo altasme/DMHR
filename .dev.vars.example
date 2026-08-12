@@ -1,9 +1,0 @@
-# Local-only vars for `npm run preview` (wrangler dev against the OpenNext build).
-# Copy to `.dev.vars` and fill in for local Cloudflare preview testing.
-# In production, set these as Worker secrets instead (wrangler secret put, or
-# the Cloudflare dashboard) — see README "Deploying to Cloudflare".
-
-RESEND_API_KEY=
-# CONTACT_TO_EMAIL=dmhrmanagementconsultancy@gmail.com
-# CONTACT_FROM_EMAIL=D.M HR Consultancy Website <onboarding@resend.dev>
-NEXT_PUBLIC_GA_MEASUREMENT_ID=

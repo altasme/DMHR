@@ -2,9 +2,12 @@
 
 MVP marketing/lead-generation website for D.M Human Resource Management Consultancy
 (Calamba, Laguna, Philippines), built to the client spec: Home, Services, About, and
-Contact, with a short consultation inquiry form as the primary conversion path.
+Contact. The primary conversion path is direct outreach — every "Book a Consultation"
+CTA opens a pre-filled WhatsApp chat; the Contact page and floating contact button
+offer WhatsApp, phone, email, and (once provided) Messenger as alternatives.
 
-Built with Next.js (App Router) + TypeScript + Tailwind CSS v4.
+Built with Next.js (App Router) + TypeScript + Tailwind CSS v4, exported as a fully
+static site (`output: "export"`) — no server, no backend, no database.
 
 ## Getting Started
 
@@ -18,75 +21,56 @@ Open [http://localhost:3000](http://localhost:3000).
 Other scripts:
 
 ```bash
-npm run build   # production build
-npm run start   # run the production build
+npm run build   # static export to ./out
 npm run lint    # ESLint
 ```
 
+`npm run build` writes a plain static site to `./out` — every route (including
+`sitemap.xml` and `robots.txt`) is pre-rendered HTML/JS/CSS with no server
+required at runtime.
+
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` and fill in the values you have:
+Copy `.env.example` to `.env.local` if you want analytics locally:
 
-- `RESEND_API_KEY` — **required before launch.** Without it, consultation form
-  submissions are only logged to the server console, not emailed. Sign up at
-  [resend.com](https://resend.com), verify a sending domain, and set this.
-- `CONTACT_TO_EMAIL` — where inquiries are sent. Defaults to
-  `dmhrmanagementconsultancy@gmail.com`.
-- `CONTACT_FROM_EMAIL` — the "from" address Resend sends as. Defaults to a
-  Resend sandbox sender; replace once a domain is verified in Resend.
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional Google Analytics 4 Measurement ID
   (`G-XXXXXXXXXX`). Leave blank to disable analytics.
 
+Nothing else is required — there's no backend, so no other secrets exist.
+
 ## Architecture Notes
 
-- **No CMS/admin.** Per project decision, all copy (services, About, credentials,
+- **No CMS/admin, no backend, no form.** All copy (services, About, credentials,
   etc.) is hardcoded in `src/data/services.ts` and `src/lib/constants.ts`, and in
   the page/section components under `src/app` and `src/components`. Content
   changes are made by editing code and redeploying.
-- **Leads go to email only**, via the `/api/contact` route and Resend. There is no
-  database and no lead-management dashboard in this MVP (see spec section 33 —
-  descoped by client decision).
-- **Analytics**: a lightweight GA4 wrapper (`src/lib/analytics.ts`) tracks the
-  primary conversion event (`consultation_request`) plus CTA clicks, phone/
-  WhatsApp/Messenger clicks, and page views (`src/components/RouteAnalytics.tsx`).
-  Wire it up by setting `NEXT_PUBLIC_GA_MEASUREMENT_ID`.
+- **Leads happen via direct contact**, not a form: every "Book a Consultation"
+  CTA (`src/components/BookConsultationCta.tsx`) opens WhatsApp with a pre-filled
+  message. The Contact page and the floating contact button
+  (`src/components/FloatingContact.tsx`) offer WhatsApp, phone, email, and
+  Messenger (once its URL is provided) as alternatives. There is no lead
+  database or dashboard in this MVP (see spec section 33 — descoped).
+- **Analytics**: a lightweight GA4 wrapper (`src/lib/analytics.ts`) tracks CTA
+  clicks and phone/WhatsApp/Messenger clicks, plus page views
+  (`src/components/RouteAnalytics.tsx`). Wire it up by setting
+  `NEXT_PUBLIC_GA_MEASUREMENT_ID`.
 
-## Deployment (Vercel)
+## Deployment (Cloudflare Pages)
 
-1. Import this repository into Vercel.
-2. Add the environment variables above in Project Settings → Environment
-   Variables (at minimum `RESEND_API_KEY` before going live).
-3. Deploy. No other configuration is required.
+This is a static export, so it's a normal Cloudflare Pages project — no Workers,
+no Functions, no adapter.
 
-## Deployment (Cloudflare Workers)
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**
+   → pick this repository and branch.
+2. Framework preset: **Next.js (Static HTML Export)**, or set manually:
+   - Build command: `npm run build`
+   - Build output directory: `out`
+3. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` under environment variables if you want
+   analytics (optional).
+4. Deploy.
 
-The repo also ships with the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare)
-(`open-next.config.ts`, `wrangler.jsonc`), so it can deploy to Cloudflare Workers
-instead of, or in addition to, Vercel.
-
-**Recommended: Git integration (no CLI needed)**
-
-1. In the Cloudflare dashboard, create a new Workers project and connect this
-   GitHub repository.
-2. Build command: `npx opennextjs-cloudflare build`. Deploy command:
-   `npx wrangler deploy`. (Cloudflare's Next.js framework preset may fill
-   these in automatically.)
-3. Add the environment variables from above as Worker secrets/variables in
-   the dashboard (Settings → Variables and Secrets) — at minimum
-   `RESEND_API_KEY`.
-4. Push to the branch Cloudflare is watching to trigger a build.
-
-**Manual CLI deploy** (from a machine/environment that can reach the
-Cloudflare API and is logged in via `npx wrangler login` or a
-`CLOUDFLARE_API_TOKEN`):
-
-```bash
-npm run deploy   # builds with opennextjs-cloudflare, then `wrangler deploy`
-```
-
-Set secrets first with `npx wrangler secret put RESEND_API_KEY` (repeat for
-any other secret values). For local Cloudflare-flavored testing, copy
-`.dev.vars.example` to `.dev.vars` and run `npm run preview`.
+The static export in `out/` also works unchanged on any static host (Vercel,
+Netlify, GitHub Pages, S3 + CloudFront, etc.) if that's ever needed instead.
 
 ## Outstanding Client Assets
 

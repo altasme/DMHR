@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 import SectionHeading from "@/components/SectionHeading";
 import Credentials from "@/components/sections/Credentials";
 import FinalCta from "@/components/sections/FinalCta";
-import CtaLink from "@/components/CtaLink";
+import BookConsultationCta from "@/components/BookConsultationCta";
 
 export const metadata: Metadata = {
   title: "About Us | Dominic Mora, Founder",
@@ -147,9 +147,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-7">
-                <CtaLink href="/contact" event="cta_click" eventParams={{ location: "about_founder" }}>
-                  Book a Consultation
-                </CtaLink>
+                <BookConsultationCta location="about_founder" />
               </div>
             </div>
           </div>
