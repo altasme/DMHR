@@ -47,7 +47,7 @@ export default function FloatingContact() {
               target={opt.href.startsWith("http") ? "_blank" : undefined}
               rel={opt.href.startsWith("http") ? "noopener noreferrer" : undefined}
               onClick={() => trackEvent(opt.event, { location: "floating_button" })}
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-50"
+              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-navy-900 transition-colors hover:bg-navy-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
             >
               {opt.key === "call" ? (
                 <Phone size={18} className="text-brand-600" />
@@ -65,7 +65,7 @@ export default function FloatingContact() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? "Close contact options" : "Open contact options"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-white shadow-lg shadow-brand-900/25 transition-transform hover:scale-105 active:scale-95"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-white shadow-lg shadow-brand-900/25 transition-transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500"
       >
         {open ? <X size={24} /> : <MessageCircle size={24} />}
       </button>

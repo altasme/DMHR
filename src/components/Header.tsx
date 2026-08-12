@@ -37,7 +37,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold transition-colors ${
+                className={`rounded-sm text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
                   active ? "text-brand-700" : "text-navy-800 hover:text-brand-700"
                 }`}
               >
@@ -54,7 +54,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-navy-900 md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -69,7 +69,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-3 text-base font-semibold text-navy-900 hover:bg-navy-50"
+                className="rounded-lg px-3 py-3 text-base font-semibold text-navy-900 hover:bg-navy-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               >
                 {link.label}
               </a>

@@ -18,6 +18,7 @@ export default function ServicesPage() {
       <section className="bg-navy-950 py-16 sm:py-20">
         <Container>
           <SectionHeading
+            level="h1"
             light
             eyebrow="Our Services"
             title="Solutions Designed Around Your Business"
@@ -29,7 +30,7 @@ export default function ServicesPage() {
               <a
                 key={pillar.id}
                 href={`#${pillar.id}`}
-                className="rounded-full border border-white/20 bg-white/5 px-5 py-2 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"
+                className="rounded-full border border-white/20 bg-white/5 px-5 py-2 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
               >
                 {pillar.shortTitle}
               </a>

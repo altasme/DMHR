@@ -45,6 +45,7 @@ export default function ContactPage() {
       <section className="bg-navy-950 py-16 sm:py-20">
         <Container>
           <SectionHeading
+            level="h1"
             light
             eyebrow="Get In Touch"
             title="Let's Talk About Your Business"

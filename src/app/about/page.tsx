@@ -19,6 +19,7 @@ export default function AboutPage() {
       <section className="bg-navy-950 py-16 sm:py-20">
         <Container>
           <SectionHeading
+            level="h1"
             light
             eyebrow="About D.M"
             title="A Practical Business Support Partner"
