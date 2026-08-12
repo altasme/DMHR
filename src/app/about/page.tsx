@@ -58,42 +58,36 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <div className="rounded-2xl border border-navy-900/10 bg-navy-50/60 p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600/10 text-brand-700">
-                  <Target size={20} />
+            <div className="flex flex-col divide-y divide-navy-900/10 border-t border-navy-900/10">
+              <div className="flex gap-4 py-6 first:pt-0">
+                <Target size={20} className="mt-1 shrink-0 text-brand-600" />
+                <div>
+                  <h3 className="font-display text-lg font-bold text-navy-900">Our Approach</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-600">
+                    Understand the business first, then recommend practical, right-sized HR and
+                    organizational solutions &mdash; not generic templates.
+                  </p>
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-navy-900">
-                  Our Approach
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                  Understand the business first, then recommend practical, right-sized HR and
-                  organizational solutions &mdash; not generic templates.
-                </p>
               </div>
-              <div className="rounded-2xl border border-navy-900/10 bg-navy-50/60 p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600/10 text-brand-700">
-                  <Users2 size={20} />
+              <div className="flex gap-4 py-6">
+                <Users2 size={20} className="mt-1 shrink-0 text-brand-600" />
+                <div>
+                  <h3 className="font-display text-lg font-bold text-navy-900">Who We Serve</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-600">
+                    SMEs, startups, growing businesses, family-owned businesses, and organizations
+                    requiring outsourced HR, accounting, administrative, or business support.
+                  </p>
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-navy-900">
-                  Who We Serve
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                  SMEs, startups, growing businesses, family-owned businesses, and organizations
-                  requiring outsourced HR, accounting, administrative, or business support.
-                </p>
               </div>
-              <div className="rounded-2xl border border-navy-900/10 bg-navy-50/60 p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600/10 text-brand-700">
-                  <Sparkles size={20} />
+              <div className="flex gap-4 py-6 last:pb-0">
+                <Sparkles size={20} className="mt-1 shrink-0 text-brand-600" />
+                <div>
+                  <h3 className="font-display text-lg font-bold text-navy-900">Our Philosophy</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-600">
+                    People. Purpose. Performance. &mdash; building better workplaces, empowering
+                    people, and driving success.
+                  </p>
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-navy-900">
-                  Our Philosophy
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-600">
-                  People. Purpose. Performance. &mdash; building better workplaces, empowering
-                  people, and driving success.
-                </p>
               </div>
             </div>
           </div>

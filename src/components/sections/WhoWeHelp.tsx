@@ -48,13 +48,10 @@ export default function WhoWeHelp() {
       <Container>
         <SectionHeading eyebrow="Who We Help" title="Built for Businesses That Are Growing" />
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
           {AUDIENCES.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="rounded-2xl border border-navy-900/10 bg-white p-6"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white">
+            <div key={title} className="flex flex-col items-start">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-300 text-brand-700">
                 <Icon size={20} />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold text-navy-900">{title}</h3>
