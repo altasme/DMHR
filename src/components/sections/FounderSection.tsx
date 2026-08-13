@@ -18,13 +18,9 @@ export default function FounderSection() {
           <Reveal className="relative mx-auto w-full max-w-sm lg:max-w-none">
             <div
               aria-hidden
-              className="absolute -top-6 -left-6 h-full w-full rounded-[32px] bg-navy-50"
+              className="absolute -top-10 -right-10 h-56 w-56 rounded-full border border-brand-200"
             />
-            <div
-              aria-hidden
-              className="absolute -right-6 -bottom-6 h-32 w-32 rounded-full border border-brand-200"
-            />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-xl shadow-navy-900/10">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image
                 src="/images/dominic-mora.jpg"
                 alt="Dominic Mora, Founder and HR Consultant at D.M Human Resource Management Consultancy"
