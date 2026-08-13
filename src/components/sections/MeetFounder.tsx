@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "../Container";
 import CtaLink from "../CtaLink";
 
@@ -6,10 +7,13 @@ export default function MeetFounder() {
     <section className="bg-white py-20 sm:py-24">
       <Container>
         <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 sm:grid-cols-[auto_1fr] sm:gap-12">
-          {/* TODO(client): replace with Dominic Mora's professional photo once provided. */}
-          <div className="mx-auto flex h-40 w-40 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-navy-800 to-brand-600 text-4xl font-bold text-white sm:h-44 sm:w-44">
-            DM
-          </div>
+          <Image
+            src="/images/dominic-mora.jpg"
+            alt="Dominic Mora, Founder and HR Consultant at D.M Human Resource Management Consultancy"
+            width={176}
+            height={176}
+            className="mx-auto h-40 w-40 shrink-0 rounded-full object-cover sm:h-44 sm:w-44"
+          />
 
           <div className="text-center sm:text-left">
             <p className="text-xs font-bold tracking-[0.14em] text-brand-600 uppercase">

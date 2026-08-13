@@ -79,8 +79,8 @@ The site currently uses placeholders for anything the client hasn't provided yet
 
 - [ ] Official D.M HR Consultancy logo file (currently a text-based placeholder
       in `src/components/Logo.tsx`)
-- [ ] Dominic Mora's professional photo (currently an initials avatar in
-      `src/components/sections/MeetFounder.tsx` and `src/app/about/page.tsx`)
+- [x] Dominic Mora's professional photo — in place at
+      `public/images/dominic-mora.jpg`, used on the homepage and About page
 - [ ] Team / office photos, if applicable
 - [ ] Client logos (in usable quality) + permission to display + confirmation of
       client status — a client-logos/testimonials section can then be added; none
