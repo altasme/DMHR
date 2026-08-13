@@ -74,10 +74,10 @@ export default function Hero() {
               aria-hidden
               className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-navy-50"
             />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-xl shadow-navy-900/10">
+            <div className="relative aspect-square overflow-hidden rounded-[32px] shadow-xl shadow-navy-900/10">
               <Image
-                src="/images/dominic-mora.jpg"
-                alt="Dominic Mora, Founder and HR Consultant at D.M Human Resource Management Consultancy"
+                src="/images/hero-team.jpg"
+                alt="The D.M Human Resource Management Consultancy team collaborating in the office"
                 fill
                 priority
                 sizes="(min-width: 1024px) 480px, 90vw"
