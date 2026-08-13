@@ -38,6 +38,20 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_PH",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | HR & Business Solutions`,
+    description: TAGLINE,
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -50,6 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description:
       "Professional HR, accounting, administrative, and business development consultancy for SMEs and growing businesses.",
     url: SITE_URL,
+    logo: `${SITE_URL}/images/logo/icon-mark.png`,
+    image: `${SITE_URL}/images/og-image.jpg`,
     email: "dmhrmanagementconsultancy@gmail.com",
     telephone: "+63-49-560-8835",
     address: {

@@ -77,11 +77,16 @@ Netlify, GitHub Pages, S3 + CloudFront, etc.) if that's ever needed instead.
 The site currently uses placeholders for anything the client hasn't provided yet
 (see spec section 37). Before launch, swap in:
 
-- [ ] Official D.M HR Consultancy logo file (currently a text-based placeholder
-      in `src/components/Logo.tsx`)
+- [x] Official D.M HR Consultancy logo — in place at `public/images/logo/`
+      (icon mark + full lockup), used in the header, footer, favicon set,
+      and structured data
 - [x] Dominic Mora's professional photo — in place at
-      `public/images/dominic-mora.jpg`, used on the homepage and About page
-- [ ] Team / office photos, if applicable
+      `public/images/dominic-mora.jpg`, used on the About page and the
+      homepage Founder/Consultant section
+- [x] Hero photo — in place at `public/images/hero-team.jpg` (D.M team)
+- [x] Open Graph / social share image — in place at
+      `public/images/og-image.jpg`
+- [ ] Team / office photos beyond the hero image, if applicable
 - [ ] Client logos (in usable quality) + permission to display + confirmation of
       client status — a client-logos/testimonials section can then be added; none
       is included in this MVP since none was provided
