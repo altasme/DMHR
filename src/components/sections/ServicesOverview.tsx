@@ -34,7 +34,7 @@ const HIGHLIGHTS: Record<string, string[]> = {
 
 export default function ServicesOverview() {
   return (
-    <section id="services-overview" className="bg-navy-50/60 py-20 sm:py-24">
+    <section id="services-overview" className="bg-navy-50 py-20 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="What We Do"
@@ -48,12 +48,12 @@ export default function ServicesOverview() {
             return (
               <div
                 key={pillar.id}
-                className="flex flex-col rounded-2xl border border-navy-900/10 bg-white p-7 shadow-sm shadow-navy-900/[0.02]"
+                className="flex flex-col rounded-2xl border border-navy-900/10 bg-white p-7 shadow-sm shadow-navy-900/[0.02] transition-transform duration-200 hover:-translate-y-1"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-white">
                   <Icon size={22} />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-navy-900">
+                <h3 className="mt-5 font-display text-2xl font-bold text-navy-900">
                   {pillar.title}
                 </h3>
                 <p className="mt-2 text-sm font-semibold text-brand-600">{pillar.tagline}</p>
@@ -77,6 +77,7 @@ export default function ServicesOverview() {
                     className="w-full"
                     event="cta_click"
                     eventParams={{ location: "services_overview", pillar: pillar.id }}
+                    showArrow
                   >
                     {pillar.ctaLabel}
                   </CtaLink>

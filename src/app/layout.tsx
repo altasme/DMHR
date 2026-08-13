@@ -11,18 +11,14 @@ import "./globals.css";
 // Self-hosted (rather than next/font/google) so the build never depends on
 // reaching fonts.gstatic.com at build time — that fetch is unreliable in some
 // CI/deploy environments (e.g. it 404s during Cloudflare Pages builds) and
-// fails the whole build when it does. Variable fonts, Latin subset only,
-// matching the previous next/font/google config.
-const bodyFont = localFont({
-  src: "./fonts/inter-variable-latin.woff2",
+// fails the whole build when it does. Variable font, Latin subset only.
+//
+// Single family (Manrope) per the design spec, used for both --font-body and
+// --font-display: components use the `font-display` utility for headings and
+// `font-sans` (default) for body text, but both resolve to the same typeface.
+const manrope = localFont({
+  src: "./fonts/manrope-variable-latin.woff2",
   variable: "--font-body",
-  weight: "100 900",
-  display: "swap",
-});
-
-const displayFont = localFont({
-  src: "./fonts/plus-jakarta-sans-variable-latin.woff2",
-  variable: "--font-display",
   weight: "200 800",
   display: "swap",
 });
@@ -77,10 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html
-      lang="en"
-      className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <script
           type="application/ld+json"

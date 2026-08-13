@@ -48,7 +48,7 @@ export default function ProblemSection() {
           {PROBLEMS.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="rounded-2xl border border-navy-900/10 bg-navy-50/50 p-6 transition-colors hover:border-brand-300"
+              className="rounded-2xl border border-navy-900/10 bg-navy-50 p-6 transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-brand-300"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600/10 text-brand-700">
                 <Icon size={22} />
@@ -69,6 +69,7 @@ export default function ProblemSection() {
               href="/contact"
               event="cta_click"
               eventParams={{ location: "problem_section" }}
+              showArrow
             >
               Talk to an HR Consultant
             </CtaLink>

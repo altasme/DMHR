@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* Off White (main page bg) / Dark Text, per design spec */
+  --background: #f8fafc;
   --foreground: #101828;
 
-  /* Brand: navy / professional blue / light blue, per client's existing visual direction */
-  --color-navy-950: #060c1f;
-  --color-navy-900: #0b1530;
-  --color-navy-800: #101d40;
-  --color-navy-700: #16295a;
-  --color-navy-600: #1c3474;
+  /* Navy scale — anchored at Deep Navy #071B3A (950, large dark sections)
+     and Dark Text #101828 (900, headings + small dark tiles). 600/500 are
+     the spec's Muted Text (#667085) family for body/secondary copy. */
+  --color-navy-950: #071b3a;
+  --color-navy-900: #101828;
+  --color-navy-800: #1b2a44;
+  --color-navy-700: #33475c;
+  --color-navy-600: #667085;
+  --color-navy-500: #8895a7;
+  --color-navy-100: #c7d3e8;
+  --color-navy-50: #eaf3fc;
 
-  --color-brand-50: #eef4ff;
-  --color-brand-100: #dbe7ff;
-  --color-brand-200: #b8d0ff;
-  --color-brand-300: #8ab0ff;
-  --color-brand-400: #5688f7;
-  --color-brand-500: #3163e8;
-  --color-brand-600: #2249c9;
-  --color-brand-700: #1c399e;
-  --color-brand-800: #182f7c;
-  --color-brand-900: #142969;
+  /* Brand scale — anchored at Brand Blue #1769D1 (600, primary accent/CTA)
+     and Bright Blue #3D8BE8 (500, secondary accent). */
+  --color-brand-50: #eaf3fc;
+  --color-brand-100: #d3e6fa;
+  --color-brand-200: #a9cdf2;
+  --color-brand-300: #93bef2;
+  --color-brand-400: #6ba3ed;
+  --color-brand-500: #3d8be8;
+  --color-brand-600: #1769d1;
+  --color-brand-700: #1257ac;
+  --color-brand-800: #0d4483;
+  --color-brand-900: #0a3568;
 
-  --color-accent-400: #4fb2e8;
-  --color-accent-500: #2f96d1;
-
-  --color-slate-750: #2a3548;
+  --color-accent-400: #3d8be8;
+  --color-accent-500: #1769d1;
 }
 
 @theme inline {
@@ -37,6 +43,9 @@
   --color-navy-800: var(--color-navy-800);
   --color-navy-700: var(--color-navy-700);
   --color-navy-600: var(--color-navy-600);
+  --color-navy-500: var(--color-navy-500);
+  --color-navy-100: var(--color-navy-100);
+  --color-navy-50: var(--color-navy-50);
 
   --color-brand-50: var(--color-brand-50);
   --color-brand-100: var(--color-brand-100);
@@ -52,8 +61,11 @@
   --color-accent-400: var(--color-accent-400);
   --color-accent-500: var(--color-accent-500);
 
+  /* Single family (Manrope) throughout — font-sans and font-display both
+     resolve to the same typeface; existing components that use font-display
+     for headings need no changes. */
   --font-sans: var(--font-body);
-  --font-display: var(--font-display);
+  --font-display: var(--font-body);
 }
 
 body {
@@ -63,4 +75,18 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -103,7 +103,7 @@ export default function ContactPage() {
             </CtaLink>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-navy-900/10 bg-navy-50/40 p-6 sm:p-8">
+          <div className="mt-10 rounded-2xl border border-navy-900/10 bg-navy-50 p-6 sm:p-8">
             <h2 className="font-display text-lg font-bold text-navy-900">
               D.M Human Resource Management Consultancy
             </h2>

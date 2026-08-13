@@ -95,7 +95,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-navy-50/60 py-20 sm:py-24">
+      <section className="bg-navy-50 py-20 sm:py-24">
         <Container>
           <div className="mx-auto grid max-w-4xl grid-cols-1 items-start gap-10 sm:grid-cols-[auto_1fr] sm:gap-12">
             <Image

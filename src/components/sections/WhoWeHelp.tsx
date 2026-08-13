@@ -44,7 +44,7 @@ const AUDIENCES = [
 
 export default function WhoWeHelp() {
   return (
-    <section className="bg-navy-50/60 py-20 sm:py-24">
+    <section className="bg-navy-50 py-20 sm:py-24">
       <Container>
         <SectionHeading eyebrow="Who We Help" title="Built for Businesses That Are Growing" />
 

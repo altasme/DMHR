@@ -48,7 +48,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <BookConsultationCta location="header" size="sm" showIcon={false} />
+          <BookConsultationCta location="header" size="sm" />
         </div>
 
         <button

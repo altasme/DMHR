@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import ProblemSection from "@/components/sections/ProblemSection";
 import ServicesOverview from "@/components/sections/ServicesOverview";
-import WhyDM from "@/components/sections/WhyDM";
+import ProcessSection from "@/components/sections/ProcessSection";
 import WhoWeHelp from "@/components/sections/WhoWeHelp";
-import MeetFounder from "@/components/sections/MeetFounder";
+import FounderSection from "@/components/sections/FounderSection";
 import Credentials from "@/components/sections/Credentials";
-import HowItWorks from "@/components/sections/HowItWorks";
 import FinalCta from "@/components/sections/FinalCta";
 
 export const metadata: Metadata = {
@@ -22,11 +21,10 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <ServicesOverview />
-      <WhyDM />
+      <ProcessSection />
       <WhoWeHelp />
-      <MeetFounder />
+      <FounderSection />
       <Credentials />
-      <HowItWorks />
       <FinalCta location="homepage_final_cta" />
     </>
   );

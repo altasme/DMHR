@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 import { AnalyticsEvent, trackEvent } from "@/lib/analytics";
 
@@ -20,6 +21,14 @@ const VARIANT_CLASSES: Record<Variant, string> = {
     "bg-transparent text-brand-700 hover:text-brand-800 underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500",
 };
 
+// Heights land in the 48–56px "substantial but not oversized" range from the
+// design spec; horizontal padding 20–32px.
+const SIZE_CLASSES: Record<"sm" | "md" | "lg", string> = {
+  sm: "h-11 px-5 text-sm",
+  md: "h-12 px-6 text-sm sm:text-base",
+  lg: "h-14 px-8 text-base",
+};
+
 export default function CtaLink({
   href,
   children,
@@ -28,6 +37,7 @@ export default function CtaLink({
   event,
   eventParams,
   icon,
+  showArrow = false,
   size = "md",
 }: {
   href: string;
@@ -36,24 +46,33 @@ export default function CtaLink({
   className?: string;
   event?: AnalyticsEvent;
   eventParams?: Record<string, string | number | boolean | undefined>;
+  /** Leading icon — for channel-identifying buttons (WhatsApp, call, email). */
   icon?: ReactNode;
+  /** Trailing arrow that nudges forward on hover — for navigational/action CTAs. */
+  showArrow?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
-  const sizeClasses =
-    size === "lg"
-      ? "px-7 py-3.5 text-base"
-      : size === "sm"
-        ? "px-4 py-2 text-sm"
-        : "px-6 py-3 text-sm sm:text-base";
-
   const isExternal =
     href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:");
 
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 focus-visible:outline-none ${sizeClasses} ${VARIANT_CLASSES[variant]} ${className}`;
+  const classes = `group inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 focus-visible:outline-none ${SIZE_CLASSES[size]} ${VARIANT_CLASSES[variant]} ${className}`;
 
   const handleClick = () => {
     if (event) trackEvent(event, eventParams);
   };
+
+  const content = (
+    <>
+      {icon}
+      {children}
+      {showArrow && (
+        <ArrowRight
+          size={size === "sm" ? 15 : 18}
+          className="shrink-0 transition-transform duration-200 ease-out group-hover:translate-x-1"
+        />
+      )}
+    </>
+  );
 
   if (isExternal) {
     return (
@@ -64,16 +83,14 @@ export default function CtaLink({
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         className={classes}
       >
-        {icon}
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <Link href={href} onClick={handleClick} className={classes}>
-      {icon}
-      {children}
+      {content}
     </Link>
   );
 }

@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 import CtaLink from "./CtaLink";
 import { CONTACT } from "@/lib/constants";
 
@@ -7,7 +6,6 @@ type Props = {
   variant?: "primary" | "secondary" | "outline-light";
   size?: "sm" | "md" | "lg";
   className?: string;
-  showIcon?: boolean;
 };
 
 export default function BookConsultationCta({
@@ -15,7 +13,6 @@ export default function BookConsultationCta({
   variant = "primary",
   size = "md",
   className = "",
-  showIcon = true,
 }: Props) {
   return (
     <CtaLink
@@ -25,7 +22,7 @@ export default function BookConsultationCta({
       className={className}
       event="whatsapp_click"
       eventParams={{ location }}
-      icon={showIcon ? <MessageCircle size={18} /> : undefined}
+      showArrow
     >
       Book a Consultation
     </CtaLink>

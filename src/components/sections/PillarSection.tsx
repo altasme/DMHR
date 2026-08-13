@@ -22,7 +22,7 @@ export default function PillarSection({
   return (
     <section
       id={pillar.id}
-      className={`scroll-mt-20 py-16 sm:py-20 ${alt ? "bg-navy-50/60" : "bg-white"}`}
+      className={`scroll-mt-20 py-16 sm:py-20 ${alt ? "bg-navy-50" : "bg-white"}`}
     >
       <Container>
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -45,6 +45,7 @@ export default function PillarSection({
               href="/contact"
               event="cta_click"
               eventParams={{ location: "services_page", pillar: pillar.id }}
+              showArrow
             >
               Talk to a Consultant
             </CtaLink>
@@ -55,7 +56,7 @@ export default function PillarSection({
           {pillar.services.map((service) => (
             <div
               key={service.name}
-              className="flex flex-col rounded-2xl border border-navy-900/10 bg-white p-6"
+              className="flex flex-col rounded-2xl border border-navy-900/10 bg-white p-6 transition-transform duration-200 hover:-translate-y-1"
             >
               <h3 className="font-display text-base font-bold text-navy-900">
                 {service.name}
