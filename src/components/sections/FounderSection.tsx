@@ -12,7 +12,7 @@ const STATS = [
 
 export default function FounderSection() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="overflow-x-hidden bg-white py-20 sm:py-28">
       <Container>
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <Reveal className="relative mx-auto w-full max-w-sm lg:max-w-none">

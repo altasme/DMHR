@@ -118,7 +118,10 @@ export default function ContactPage() {
                       {label}
                     </span>
                     {href ? (
-                      <a href={href} className="text-sm font-semibold text-navy-900 hover:text-brand-700">
+                      <a
+                        href={href}
+                        className="text-sm font-semibold break-all text-navy-900 hover:text-brand-700"
+                      >
                         {value}
                       </a>
                     ) : (

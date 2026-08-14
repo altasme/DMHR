@@ -72,7 +72,7 @@ export default function TermsPage() {
             <h2 className="font-display text-xl font-bold text-navy-900">Contact Us</h2>
             <p className="mt-2">
               Questions about these terms can be directed to{" "}
-              <a href={CONTACT.emailHref} className="font-semibold text-brand-700">
+              <a href={CONTACT.emailHref} className="font-semibold break-all text-brand-700">
                 {CONTACT.email}
               </a>{" "}
               or {CONTACT.telephoneDisplay}.
