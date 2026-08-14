@@ -105,6 +105,29 @@ export default function Footer() {
           </p>
           <p>Calamba, Laguna, Philippines</p>
         </div>
+
+        <div className="mt-4 text-center text-xs text-white/50 sm:text-left">
+          <p>
+            Website &amp; Hosting by{" "}
+            <a
+              href="https://altasme.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/70 hover:text-white"
+            >
+              ALTAVENTURES
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://altasme.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/70 hover:text-white"
+            >
+              Get your flagship website FREE
+            </a>
+          </p>
+        </div>
       </Container>
     </footer>
   );
